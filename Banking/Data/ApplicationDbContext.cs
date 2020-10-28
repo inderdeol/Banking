@@ -14,5 +14,6 @@ namespace Banking.Data
         {
         }
         public DbSet<Banking.Models.Customer> Customer { get; set; }
+        public DbSet<Banking.Models.Account> Account { get; set; }
     }
 }
