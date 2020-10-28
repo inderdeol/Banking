@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Banking.Models;
 
 namespace Banking.Data
 {
@@ -12,5 +13,6 @@ namespace Banking.Data
             : base(options)
         {
         }
+        public DbSet<Banking.Models.Customer> Customer { get; set; }
     }
 }
