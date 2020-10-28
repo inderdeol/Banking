@@ -48,7 +48,7 @@ namespace Banking.Controllers
         // GET: Accounts/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id");
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "FirstName");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Banking.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", account.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "FirstName", account.CustomerId);
             return View(account);
         }
 
@@ -82,7 +82,7 @@ namespace Banking.Controllers
             {
                 return NotFound();
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", account.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "FirstName", account.CustomerId);
             return View(account);
         }
 
@@ -118,7 +118,7 @@ namespace Banking.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", account.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "FirstName", account.CustomerId);
             return View(account);
         }
 
